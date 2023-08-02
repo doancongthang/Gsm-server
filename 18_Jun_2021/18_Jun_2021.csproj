@@ -63,18 +63,11 @@
     <WarningLevel>4</WarningLevel>
     <PublishDatabaseSettings>
       <Objects>
-        <ObjectGroup Name="AccountConnectionString-Deployment" Order="1" xmlns="">
+        <ObjectGroup Name="DBModelABC-Deployment" Order="1" xmlns="">
           <Destination Path="" />
           <Object Type="DbFullSql">
-            <PreSource Path="Data Source=%28LocalDB%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\Account.mdf%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
-            <Source Path="obj\Release\AutoScripts\AccountConnectionString-Deployment_SchemaOnly.sql" Transacted="True" />
-          </Object>
-        </ObjectGroup>
-        <ObjectGroup Name="AccountEntities1-Deployment" Order="2" xmlns="">
-          <Destination Path="" />
-          <Object Type="DbFullSql">
-            <PreSource Path="Data Source=%28LocalDB%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\Account.mdf%3bIntegrated Security=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
-            <Source Path="obj\Release\AutoScripts\AccountEntities1-Deployment_SchemaOnly.sql" Transacted="True" />
+            <PreSource Path="Data Source=.%3bInitial Catalog=D:\FREELANCER\19_GSM\GSM_DOCUMENT_PRIVATE_FOR_TNV\SOFTWARE\GSM-SERVER\18_JUN_2021\APP_DATA\ACCOUNT.MDF%3bIntegrated Security=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Release\AutoScripts\DBModelABC-Deployment_SchemaOnly.sql" Transacted="True" />
           </Object>
         </ObjectGroup>
       </Objects>

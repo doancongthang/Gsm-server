@@ -266,6 +266,7 @@
     <Content Include="images\bg-01.jpg" />
     <Content Include="images\icons\favicon.ico" />
     <Content Include="images\icons\Icon RM.ico" />
+    <Content Include="images\icons\LG DANHIM full.ico" />
     <Content Include="js\main.js" />
     <Content Include="Models\SqlDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
@@ -415,6 +416,7 @@
     <Content Include="Views\Account\Logout.cshtml" />
     <Content Include="Views\Account\RegisterStation.cshtml" />
     <Content Include="Views\Account\SelectClient.cshtml" />
+    <Content Include="Views\Account\EditStation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

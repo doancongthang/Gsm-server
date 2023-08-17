@@ -1,0 +1,116 @@
+﻿
+@{
+    ViewBag.Title = "StationDatabase";
+    Layout = "~/Views/_LayoutPage1.cshtml";
+    <link href="~/css/main.css" rel="stylesheet" />
+    <link href="~/css/util.css" rel="stylesheet" />
+    WebGrid webGrid = new WebGrid(source: Model, canPage: true, rowsPerPage: 5, canSort: false);
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <style type="text/css">
+        body {
+            font-family: Poppins-Regular;
+            font-size: 14px;
+            color: #e5e5e5;
+            line-height: 1.5;
+        }
+
+        .Grid {
+            border: 1px solid #ccc;
+            border-collapse: collapse;
+        }
+
+            .Grid th {
+                background-color: transparent;
+                font-weight: bold;
+            }
+
+            .Grid th, .Grid td {
+                padding: 10px;
+                border: 2px solid #ccc;
+            }
+
+            .Grid, .Grid table td {
+                border: 0px solid #ccc;
+            }
+
+                .Grid th a, .Grid th a:visited {
+                    color: #333;
+                }
+    </style>
+    <div class="limiter">
+
+        <div class="container-login100" style="background-image: url('../../images/bg-01.jpg'); " />
+
+
+
+
+        <div class="wrap-login100">
+            <form action="StationDatabase" method="post" class="login100-form validate-form">
+                <center>
+                    <span class="">
+                        <img src="~/images/icons/LG DANHIM full.ico" />
+                        <i class="zmdi-landscape"></i>
+                    </span>
+                </center>
+
+                <span class="login100-form-title p-b-34 p-t-27">
+                    StationDatabase
+                </span>
+
+                <div>
+                    @webGrid.GetHtml(
+                    htmlAttributes: new { id = "MessageGrid", @class = "Grid" },
+                    columns: webGrid.Columns(
+                        webGrid.Column("ToStation", "ToStation", format: @<text> @Html.ActionLink(linkText: (string)@item.ToStation, actionName: "SendMessageResult", routeValues: new { id = item.Id })</text>),
+
+                        webGrid.Column("StationOK", "Success"),
+                        webGrid.Column("StationNG", "Fail"),
+                        webGrid.Column("MessageTitle", "MessageTitle"),
+                        webGrid.Column("Date", "Date")
+                        )
+                        )
+                </div>
+
+            </form>
+            <br />
+            <div>
+                @Html.ActionLink("SendMessageToClients", "SelectClient", "Account")
+                <br />
+                @Html.ActionLink("Or Logout", "Logout", "Account")
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="~/Scripts/jquery-3.4.1.js"></script>
+    <script src="~/Scripts/jquery.validate-vsdoc.js"></script>
+    <script src="~/Scripts/jquery.validate.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/jquery/jquery-3.2.1.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/animsition/js/animsition.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/bootstrap/js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/select2/select2.min.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/daterangepicker/moment.min.js"></script>
+    <script src="~/vendor/daterangepicker/daterangepicker.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/vendor/countdowntime/countdowntime.js"></script>
+    <!--===============================================================================================-->
+    <script src="~/js/main.js"></script>
+
+
+}

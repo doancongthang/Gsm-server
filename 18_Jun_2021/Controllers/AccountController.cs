@@ -12,7 +12,7 @@ using System.Threading;
 using System.Web.Security;
 using _18_Jun_2021.Models.Extended;
 using System.IO;
-
+// Hải sửa logo
 namespace _18_Jun_2021.Controllers
 {
     public class AccountController : Controller

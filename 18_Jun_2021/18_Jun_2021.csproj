@@ -266,6 +266,7 @@
     <Content Include="images\bg-01.jpg" />
     <Content Include="images\icons\favicon.ico" />
     <Content Include="images\icons\Icon RM.ico" />
+    <Content Include="images\icons\LG DANHIM full.ico" />
     <Content Include="js\main.js" />
     <Content Include="Models\SqlDataModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

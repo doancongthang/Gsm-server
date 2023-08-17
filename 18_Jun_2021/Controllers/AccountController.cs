@@ -550,7 +550,7 @@ namespace _18_Jun_2021.Controllers
             {
                 dc.SaveChanges();
             }
-            catch(Exception)
+            catch (Exception)
             {
                 /* Input data is wrong > can not save to database */
             }

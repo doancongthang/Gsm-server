@@ -329,7 +329,7 @@ namespace _18_Jun_2021.Controllers
         #region  Save your message into database
         protected void SaveMessageToDatabase(Message msg)
         {
-            //using (DBModelABC dc = new DBModelABC())
+            using (DBModelABC dc = new DBModelABC())
             {
                 var v = dc.Messages.Where(a => a.MessageContent == msg.MessageContent).FirstOrDefault();
 
@@ -389,9 +389,9 @@ namespace _18_Jun_2021.Controllers
                 Thread.Sleep(100);
                 //Send sms from textbox
                 //serialPort.WriteLine("AT+CMGS=\"" + textBox1.Text + "\""+ Environment.NewLine);
-                //GMSDevice.desPort.WriteLine("AT+CMGS=\"" + "+84977413768" + "\"" + Environment.NewLine);
+                GMSDevice.desPort.WriteLine("AT+CMGS=\"" + "+84977413768" + "\"" + Environment.NewLine);
                 //GMSDevice.desPort.WriteLine("AT+CMGS=\"" + "+84764316794" + "\"" + Environment.NewLine);      //Số đăng ký gởi nhiều tin nhắn
-                GMSDevice.desPort.WriteLine("AT+CMGS=\"" + "+84764316794" + "\"" + Environment.NewLine);        //Sim Mobile nhận
+                //GMSDevice.desPort.WriteLine("AT+CMGS=\"" + "+84764316794" + "\"" + Environment.NewLine);        //Sim Mobile nhận
                 Thread.Sleep(100);
 
                 GMSDevice.desPort.WriteLine(smstosend + Environment.NewLine);
